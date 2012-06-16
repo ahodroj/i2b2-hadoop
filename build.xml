@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Build file for I2B2-Hadoop
+-->
+
+<project basedir="." default="jar" name="i2b2-hadoop">
+     
+    <property name="build" value="build"/>
+    <property name="dist" value="dist"/>
+    <property name="src" value="src"/>
+    <property name="lib" value="lib"/>
+        
+    <property name="build.classes" value="${build}/classes"/>   
+    <property name="build.resources" value="${build}/resources"/>
+	<property name="build.lib" value="${build}/lib"/>   
+    
+    <property name="jar.file" value="i2b2-hadoop.jar"/>
+	 <path id="master-classpath">
+          <fileset dir="lib">
+            <include name="*.jar"/>
+          </fileset>
+   </path>
+
+   <target name="init">
+        <!-- this must be cleared, because we only want the lib files for current target -->
+        <delete dir="${build.lib}"/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${build.classes}"/>		
+        <mkdir dir="${build.lib}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+    
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+    
+    
+    <target name="compile" depends="init">       
+        <javac debug="true" debuglevel="lines, vars, and source" destdir="${build.classes}">
+            <src path="src"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+    </target>
+        
+    <!-- build war file, using the folders created under build folder -->
+    <target name="jar" depends="compile">
+        <jar destfile="${dist}/${jar.file}"
+       basedir="${build}/classes"
+       excludes="**/Test.class"/>
+    </target> 
+</project>
