@@ -1,4 +1,4 @@
-Prototyping a map/reduce query processor engine for i2b2 CRC queries
+i2b2-hadoop: a map/reduce query processor engine for i2b2 CRC queries
 Version: 0.2
 
 
