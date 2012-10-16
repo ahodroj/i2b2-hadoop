@@ -7,7 +7,7 @@ Academic Medical Centers (AMCs), and has also found increasing use at other orga
 performance improvement initiatives.
 
 An i2b2 implementation consists of a data mart of clinical, research, and administrative data, and an interface to 
-construct and manage queries and data sets. This project provides a Hadoop implementatin of the data mart query
+construct and manage queries and data sets. This project provides a Hadoop implementation of the data mart query
 engine, known as the CRC. 
 
 Version: 0.2
