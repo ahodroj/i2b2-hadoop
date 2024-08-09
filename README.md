@@ -1,4 +1,4 @@
-i2b2-hadoop: a map/reduce query processor engine for i2b2 CRC queries
+## i2b2-hadoop: a map/reduce query processor engine for i2b2 CRC queries
 
 i2b2 (Informatics for Integrating Biology & the Bedside) is an open-source platform for de-identified cohort 
 discovery, and for managing and delivering clinical data sets for research with appropriate IRB approval. 
